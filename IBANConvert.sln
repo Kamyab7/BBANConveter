@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IBANConverter", "IBANConver
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample", "Sample\Sample.csproj", "{914C163D-1CD6-4BFD-95BC-F4047E47D050}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBANConverter.Tests", "IBANConverter.Tests\IBANConverter.Tests.csproj", "{8A41E275-652B-4EA1-8357-35EA4C97F608}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{914C163D-1CD6-4BFD-95BC-F4047E47D050}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{914C163D-1CD6-4BFD-95BC-F4047E47D050}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{914C163D-1CD6-4BFD-95BC-F4047E47D050}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A41E275-652B-4EA1-8357-35EA4C97F608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A41E275-652B-4EA1-8357-35EA4C97F608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A41E275-652B-4EA1-8357-35EA4C97F608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A41E275-652B-4EA1-8357-35EA4C97F608}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
