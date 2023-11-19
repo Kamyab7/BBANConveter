@@ -73,7 +73,22 @@ public class IBAN
 
     private bool ValidateIBAN()
     {
-        throw new NotImplementedException();
+        string firstFourChar = Value.Substring(0, 4);
+
+        string manipulatedString = Value.Substring(4) + firstFourChar;
+
+        foreach (var c in manipulatedString)
+        {
+            if (Dictionary.ContainsKey(c))
+            {
+                manipulatedString = manipulatedString.Replace(c.ToString(), Dictionary[c].ToString());
+            }
+        }
+
+        if (manipulatedString.Length == 28 && Convert.ToDecimal(manipulatedString) % 97 == 1)
+            return true;
+
+        return false;
     }
 
     private string CalculateIBAN()
@@ -81,39 +96,40 @@ public class IBAN
         return $"{CC}{CD}{BBAN}";
     }
 
+
+    private Dictionary<char, int> Dictionary = new Dictionary<char, int>()
+    {
+        ['A'] = 10,
+        ['B'] = 11,
+        ['C'] = 12,
+        ['D'] = 13,
+        ['E'] = 14,
+        ['F'] = 15,
+        ['G'] = 16,
+        ['H'] = 17,
+        ['I'] = 18,
+        ['J'] = 19,
+        ['K'] = 20,
+        ['L'] = 21,
+        ['M'] = 22,
+        ['N'] = 23,
+        ['O'] = 24,
+        ['P'] = 25,
+        ['Q'] = 26,
+        ['R'] = 27,
+        ['S'] = 28,
+        ['T'] = 29,
+        ['T'] = 30,
+        ['T'] = 31,
+        ['W'] = 32,
+        ['X'] = 33,
+        ['Y'] = 34,
+        ['Z'] = 35,
+    };
+
     private string CalculateCD()
     {
-        Dictionary<char, int> dic = new Dictionary<char, int>()
-        {
-            ['A'] = 10,
-            ['B'] = 11,
-            ['C'] = 12,
-            ['D'] = 13,
-            ['E'] = 14,
-            ['F'] = 15,
-            ['G'] = 16,
-            ['H'] = 17,
-            ['I'] = 18,
-            ['J'] = 19,
-            ['K'] = 20,
-            ['L'] = 21,
-            ['M'] = 22,
-            ['N'] = 23,
-            ['O'] = 24,
-            ['P'] = 25,
-            ['Q'] = 26,
-            ['R'] = 27,
-            ['S'] = 28,
-            ['T'] = 29,
-            ['T'] = 30,
-            ['T'] = 31,
-            ['W'] = 32,
-            ['X'] = 33,
-            ['Y'] = 34,
-            ['Z'] = 35,
-        };
-
-        string temp = $"{BBAN}{dic[CC[0]]}{dic[CC[1]]}" + "00";
+        string temp = $"{BBAN}{Dictionary[CC[0]]}{Dictionary[CC[1]]}" + "00";
         char[] a = temp.ToCharArray();
         int r = 0;
 

@@ -22,6 +22,7 @@ namespace IBANConverter.Tests
             iban.CC.Should().Be(countryCode);
             iban.CD.Should().Be(expectedCD);
             iban.Value.Should().Be(expectedIBANValue);
+            iban.IsValid.Should().BeTrue();
         }
     }
 }
