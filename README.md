@@ -1,6 +1,6 @@
-# BBANConveter
+# IBANConveter
 
-Convert Bank Account Number To International Bank Account Number (BBAN) based on ISO13616 standard
+Convert Bank Account Number To International Bank Account Number (IBAN) based on ISO13616 standard
 
 ## Resources
 
