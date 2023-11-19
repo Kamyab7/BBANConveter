@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ISO13616;
+namespace IBANConverter;
 
 public class IBAN
 {
